@@ -60,7 +60,7 @@ machine-learning-practice/
 │   ├── draw_ratio_error.py
 │   └── err.py
 ├── mortality/                  # Mortality prediction task
-│   ├── predict.0.py                 # Full mortality modeling and analysis pipeline
+│   ├── predict.py                 # Full mortality modeling and analysis pipeline
 │   ├── data1.csv               # Urban mortality dataset
 │   └── data2.csv               # Rural mortality dataset
 ├── requirements.txt            # Python dependencies
@@ -95,7 +95,7 @@ python src/main.py
 
 ```bash
 cd mortality
-python 13.0.py
+python predict.py 
 ```
 
 
