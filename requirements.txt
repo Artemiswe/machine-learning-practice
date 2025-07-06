@@ -1,0 +1,30 @@
+# Core libraries
+numpy>=1.20
+pandas>=1.3
+scikit-learn>=1.0
+
+# Visualization
+matplotlib>=3.5
+seaborn>=0.11
+plotly>=5.0
+
+# Model explainability
+shap>=0.41
+
+# Tree-based ensemble models
+xgboost>=1.5
+lightgbm>=3.3
+catboost>=1.0
+
+# Hyperparameter tuning
+optuna>=2.10
+scikit-optimize>=0.9
+
+# Spatial data handling (for SHAP map visualization)
+geopandas>=0.10
+
+# Stats utilities
+statsmodels>=0.13
+
+# System compatibility
+fonttools>=4.28
