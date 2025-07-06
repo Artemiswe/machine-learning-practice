@@ -1,5 +1,4 @@
 
-
 # Structured Data Modeling with Ensemble Learning
 
 This repository presents two real-world applications of ensemble learning techniques on structured datasets:
@@ -9,13 +8,11 @@ This repository presents two real-world applications of ensemble learning techni
 
 Both tasks leverage models such as **Gradient Boosting**, **Random Forest**, and **XGBoost**. The focus is not only on predictive performance, but also on model interpretability (via SHAP, partial dependence) and uncertainty evaluation.
 
----
 
 ## 🔍 Motivation
 
 In scenarios involving moderately sized structured datasets with complex feature dependencies, ensemble models are known to provide a good balance between accuracy and robustness. This project investigates their performance across **multi-output regression tasks**, while also assessing their reliability and interpretability.
 
----
 
 ## 🧪 Tasks Overview
 
@@ -45,8 +42,6 @@ Highlights include:
 - Feature importance and partial dependence plots
 - Multi-model performance variance analysis
 
----
-
 ## 📁 Project Structure
 
 ```bash
@@ -73,7 +68,7 @@ machine-learning-practice/
 └── README.md
 ````
 
----
+
 
 ## 🚀 Getting Started
 
@@ -103,7 +98,7 @@ cd mortality
 python 13.0.py
 ```
 
----
+
 
 ## 📊 Sample Outputs
 
@@ -121,7 +116,7 @@ python 13.0.py
   * Partial Dependence Curves
   * Model Ranking with Variance-Aware Score
 
----
+
 
 ## 🛠 Requirements
 
@@ -133,7 +128,7 @@ Main Python libraries used:
 * `shap`, `seaborn`, `matplotlib`
 * `geopandas`, `plotly`
 
----
+
 
 ## 🙌 Acknowledgements
 
