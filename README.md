@@ -1,38 +1,79 @@
-# Medal Prediction using Ensemble Learning
 
-This project explores the application of ensemble learning techniques—such as Gradient Boosting, Random Forest, and XGBoost—to predict Olympic medal counts (gold, silver, bronze, and total) based on structured national-level data. The focus lies on both **predictive performance** and **model interpretability**, with extended analyses such as SHAP value interpretation and uncertainty evaluation.
+
+# Structured Data Modeling with Ensemble Learning
+
+This repository presents two real-world applications of ensemble learning techniques on structured datasets:
+
+- 🥇 **Olympic Medal Prediction** based on national-level historical sports data
+- ⚰️ **Mortality Rate Modeling** across urban and rural regions in China
+
+Both tasks leverage models such as **Gradient Boosting**, **Random Forest**, and **XGBoost**. The focus is not only on predictive performance, but also on model interpretability (via SHAP, partial dependence) and uncertainty evaluation.
+
+---
 
 ## 🔍 Motivation
 
-In scenarios involving moderately sized structured datasets with complex feature dependencies, ensemble models are often capable of achieving high prediction accuracy while maintaining robustness. This project aims to evaluate such models' performance in multi-target regression settings and investigate how feature importance and error distribution vary across sub-tasks.
+In scenarios involving moderately sized structured datasets with complex feature dependencies, ensemble models are known to provide a good balance between accuracy and robustness. This project investigates their performance across **multi-output regression tasks**, while also assessing their reliability and interpretability.
+
+---
+
+## 🧪 Tasks Overview
+
+### 🥇 Medal Prediction
+
+Predict the gold, silver, bronze, and total medal counts of each country based on historical Olympic data. Key features include:
+
+- Athlete numbers
+- Host country indicator
+- Past medal history
+- Event-wise per-capita performance (48 sports)
+
+Additional modules include:
+
+- SHAP-based feature attribution
+- Country-wise sports dominance mapping
+- CPI score for model comparison
+
+### ⚰️ Mortality Rate Modeling
+
+Forecast age-standardized mortality rates (ASMR) for **urban and rural regions** in China in 2010 and 2020 using socioeconomic and environmental indicators.
+
+Highlights include:
+
+- VIF-based multicollinearity reduction
+- BayesSearchCV hyperparameter optimization
+- Feature importance and partial dependence plots
+- Multi-model performance variance analysis
+
+---
 
 ## 📁 Project Structure
 
 ```bash
 machine-learning-practice/
-├── data/                        # Cleaned CSV files for medal prediction tasks
+├── data/                        # Medal prediction datasets
 │   ├── AllAverage.csv
 │   ├── GoldAverage.csv
 │   ├── SilverAverage.csv
 │   ├── BronzeAverage.csv
 │   ├── All_Predict.csv
-│   ├── Gold_Predict.csv
-│   ├── Silver_Predict.csv
-│   └── Bronze_Predict.csv
-├── src/                         # Python scripts
-│   ├── main.py                  # Main training script (for total medal task)
-│   ├── drawmap.py               # Country-wise SHAP visualizer
-│   ├── draw_impo.py             # Feature importance plotter
-│   ├── draw_ratio_error.py      # Error/r² trend visualizer
-│   └── err.py                   # Custom error metric calculation
-├── README.md                    # This file
-├── requirements.txt             # Python dependencies
-└── .gitignore
+│   └── ... (more medal data)
+├── src/                         # Medal prediction scripts
+│   ├── main.py
+│   ├── drawmap.py
+│   ├── draw_impo.py
+│   ├── draw_ratio_error.py
+│   └── err.py
+├── mortality/                  # Mortality prediction task
+│   ├── predict.0.py                 # Full mortality modeling and analysis pipeline
+│   ├── data1.csv               # Urban mortality dataset
+│   └── data2.csv               # Rural mortality dataset
+├── requirements.txt            # Python dependencies
+├── .gitignore
+└── README.md
 ````
 
-## 📊 Datasets
-
-All datasets are stored in `./data/` and are pre-cleaned. They include historical medal performance, athlete numbers, and country-level sports indicators.
+---
 
 ## 🚀 Getting Started
 
@@ -49,39 +90,53 @@ cd machine-learning-practice
 pip install -r requirements.txt
 ```
 
-### 3. Run the main script
+### 3. Run Medal Prediction Task
 
 ```bash
 python src/main.py
 ```
 
-Additional visualization scripts (e.g., SHAP maps, error trend analysis) can be run independently after training.
+### 4. Run Mortality Modeling Task
 
-## 📈 Sample Outputs
+```bash
+cd mortality
+python 13.0.py
+```
 
-* Feature Importance (SHAP)
-* Key-Sport Distribution by Country (Map)
-* Training/Test Error Curves
-* Model Comparison Table (MAE, RMSE, R², CPI)
+---
 
-All figures were generated using real model outputs and stored datasets.
+## 📊 Sample Outputs
+
+* Medal Prediction:
+
+  * SHAP Feature Importance Bar Charts
+  * Sports Dominance Map by Country
+  * Error/R² Trend Charts
+  * CPI-Based Model Comparison
+
+* Mortality Modeling:
+
+  * VIF Tables for Urban/Rural
+  * Feature Importance Rankings (by model)
+  * Partial Dependence Curves
+  * Model Ranking with Variance-Aware Score
+
+---
 
 ## 🛠 Requirements
 
-Main packages include:
+Main Python libraries used:
 
-* pandas
-* numpy
-* scikit-learn
-* matplotlib
-* shap
-* seaborn
-* optuna
-* geopandas
-* plotly
+* `pandas`, `numpy`
+* `scikit-learn`, `xgboost`, `lightgbm`, `catboost`
+* `optuna`, `scikit-optimize`
+* `shap`, `seaborn`, `matplotlib`
+* `geopandas`, `plotly`
+
+---
 
 ## 🙌 Acknowledgements
 
-Special thanks to my teammate for their significant contribution in **data collection, cleaning, and preprocessing**, which laid the foundation for this project.
+**Special thanks to my teammates for their valuable help in data collection and preprocessing**.
 
-
+All modeling design, algorithm implementation, evaluation, and visualization—across both the **medal prediction** and **mortality modeling** tasks—were independently completed by the author.
