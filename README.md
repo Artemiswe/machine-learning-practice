@@ -134,4 +134,4 @@ Main Python libraries used:
 
 **Special thanks to my teammates for their valuable help in data collection and preprocessing**.
 
-All modeling design, algorithm implementation, evaluation, and visualization—across both the **medal prediction** and **mortality modeling** tasks—were independently completed by the author.
+
